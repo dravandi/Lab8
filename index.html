@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <script>
+
+
+
+
+
+        function generate() {
+            user = parseInt(prompt("Enter a number from 1 to 26"))
+            for (let i = 0; i <= user - 1; i++) {
+                let letter = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "N", "M", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+                let btn = document.createElement("BUTTON");
+                document.body.appendChild(btn);
+                btn.innerHTML = letter[i]
+                btn.onclick = function () { console.log("Button " + letter[i] + " was clicked") }
+            }
+
+        }
+
+
+        generate();
+
+
+
+        function Recipe(name, servings, ingredients) {
+            this.title = name;
+            this.servings = servings;
+            this.ingredients = ingredients;
+            this.print = function (numberOfServings) {
+                document.write("<br>" + "Name: " + this.title + "<br>");
+                document.write("Servings: " + numberOfServings + "<br>");
+                document.write("Ingredients:" + "<br>");
+                for (let i = 0; i < this.ingredients.length; i++) {
+                    document.write(this.ingredients[i] + "<br>");
+                }
+            }
+        }
+
+
+        let food = new Recipe('GhirmehSabzi', 4, ['Lettuce', 'Onion', 'Cinnamon'])
+        food.print(12);
+
+
+    </script>
+
+</body>
+
+</html>
